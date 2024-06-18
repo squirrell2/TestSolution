@@ -31,9 +31,15 @@ namespace Application.Api.Controllers
         public async  Task<IEnumerable<WeatherForecast>> Get()
         {
             cnt++;
+            var record = new SampleTable() { Name_2 = $"MySampleRecord_{cnt}" };
             _contextFactory.Set<SampleTable>()
+                .Add(record);
+            await _contextFactory.SaveChangesAsync();
+
+            cnt++;
+            _contextFactory.Set<SecondTable>()
                 .Add(
-                    new SampleTable() { Name_2 = $"MySampleRecord_{cnt}" }
+                    new SecondTable() { Name = $"Mystring_{cnt}", SampleTable = record }
                     );
             await _contextFactory.SaveChangesAsync();
 
