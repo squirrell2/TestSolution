@@ -33,7 +33,7 @@ namespace Application.Api.Controllers
             cnt++;
             _contextFactory.Set<SampleTable>()
                 .Add(
-                    new SampleTable() { Name = $"MySampleRecord_{cnt}" }
+                    new SampleTable() { Name_2 = $"MySampleRecord_{cnt}" }
                     );
             await _contextFactory.SaveChangesAsync();
 

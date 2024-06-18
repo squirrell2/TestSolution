@@ -10,6 +10,8 @@ namespace Infrastructure.EFModels
     {
         public int Id { get; set; }
 
-        public string Name { get; set; }
+        public string Name_2 { get; set; }
+
+        public DateTimeOffset DateCreate { get; set; }
     }
 }
